@@ -1,0 +1,20 @@
+<div>
+    <button [routerLink]="['/user/currentUser._id']">Bucket List</button>
+    <button [routerLink]="['/dashboard']">Home</button>
+    <button (click)="logout()">Logout</button>
+</div>
+<h1>{{currentUser.name}}</h1>
+<h2>Done</h2>
+<div *ngFor="let x of buckets">
+    <input type="checkbox" checked="checked">
+    <label>{{x.user.name}} | {{x.title}} - {{x.description}} - {{x.createdAt | date: 'medium'}} 
+    
+  </label>
+</div>
+<h2>Pending</h2>
+<div *ngFor="let x of buckets">
+    <input type="checkbox" checked="checked">
+    <label>{{x.user.name}} | {{x.title}} - {{x.description}} - {{x.createdAt | date: 'medium'}}
+    
+  </label>
+</div>

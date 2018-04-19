@@ -1,0 +1,30 @@
+<div *ngFor='let bikeInstance of myBikeListings, let idx = index' class='bikewrapper'>
+    <!-- <div id='bike'>
+      <img src="{{bikeInstance.image}}" >
+      <div id='desc'>
+          <h3>{{bikeInstance.title}}</h3>
+          <p>{{bikeInstance.description}}</p>
+      </div>
+      <div id='price'>
+          <h3>{{bikeInstance.price}}</h3>
+          <p>{{bikeInstance.location}}</p>
+      </div>
+  </div> -->
+    <div id='bike'>
+        <img src="{{bikeInstance.image}}">
+        <form (submit)="update(idx)" #formObject='ngForm'>
+            <label for="title">Title<span *ngIf='title?.valid !== true'>{{title?.errors | json}}</span></label>
+            <input type="text" name="title" required minlength="4" maxlength="64" [(ngModel)]="bikeInstance.title" #title='ngModel' />
+            <label for="description">Description<span *ngIf='description?.valid !== true'>{{description?.errors | json}}</span></label>
+            <input type="text" name="description" required minlength="8" maxlength="255" [(ngModel)]="bikeInstance.description" #description='ngModel' />
+            <label for="location">Location<span *ngIf='location?.valid !== true'>{{location?.errors | json}}</span></label>
+            <input type="text" name="location" required minlength="5" maxlength="100" [(ngModel)]="bikeInstance.location" #location='ngModel' />
+            <label for="price">Price<span *ngIf='price?.valid !== true'>{{price?.errors | json}}</span></label>
+            <input type="number" name="price" required minlength="1" maxlength="10000" [(ngModel)]="bikeInstance.price" #price='ngModel' />
+            <label for="image">Image<span *ngIf='image?.valid !== true'>{{image?.errors | json}}</span></label>
+            <input type="text" name="image" required minlength="1" maxlength="100" [(ngModel)]="bikeInstance.image" #image='ngModel' />
+            <input value="Update" type="submit" [disabled]="formObject.invalid">
+        </form>
+        <button (click)='delete(bikeInstance._id)'>delete</button>
+    </div>
+</div>

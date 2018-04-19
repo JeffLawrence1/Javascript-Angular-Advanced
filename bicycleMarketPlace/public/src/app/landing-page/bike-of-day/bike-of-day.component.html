@@ -1,0 +1,18 @@
+<div materialize class="col s12 12  center-align">
+    <div class="row">
+        <h2>Bike of the day!</h2>
+        <div class="col s12 m8 l8 offset-l2">
+            <div class="row">
+                <img class='col s12 m8 l4' src="{{bikeInstance?.image}}">
+                <div class="col l4">
+                    <h3>{{bikeInstance?.title}}</h3>
+                    <p>{{bikeInstance?.description}}</p>
+                </div>
+                <div class="col l4">
+                    <h3>{{bikeInstance?.price| currency:'USD':true}}</h3>
+                    <p *ngIf='loginState'>{{bikeInstance?.location}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

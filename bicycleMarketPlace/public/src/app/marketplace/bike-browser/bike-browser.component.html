@@ -1,0 +1,14 @@
+<h1>Bike Browser</h1>
+<div *ngFor='let bikeInstance of bikeArray' class='bikewrapper'>
+    <div id='bike'>
+        <img src="{{bikeInstance.image}}">
+        <div id='desc'>
+            <h3>{{bikeInstance.title}}</h3>
+            <p>{{bikeInstance.description}}</p>
+        </div>
+        <div id='price'>
+            <h3>{{bikeInstance.price}}</h3>
+            <p *ngIf='loginState'>{{bikeInstance.location}}</p>
+        </div>
+    </div>
+</div>

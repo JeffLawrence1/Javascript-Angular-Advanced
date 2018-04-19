@@ -1,0 +1,46 @@
+<div>
+    <button [routerLink]="['/user/currentUser._id']">Bucket List</button>
+    <button [routerLink]="['/dashboard']">Home</button>
+    <button (click)="logout()">Logout</button>
+</div>
+<div>
+    <h1>Welcome, {{currentUser.name}}!</h1>
+    <form (submit)="createBucket()">
+        <div>
+            <label>Title</label>
+            <input type="text" name="title" [(ngModel)]="newBucket.title">
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" [(ngModel)]="newBucket.description">
+        </div>
+        <div>
+            <select>
+              <p *ngFor="let user of users">
+               <option value="{user.id}">{{user}}</option>
+              </p>
+              </select>
+        </div>
+        <div>
+            <input type="submit" value="Add to List">
+        </div>
+    </form>
+    <div>
+        <p class="error" *ngFor="let error of errors">{{ error }}</p>
+    </div>
+</div>
+
+<div>
+    <h2>Before I die I want to..</h2>
+    <div *ngFor="let x of buckets">
+        <input type="checkbox" checked="checked">
+        <label>{{x.user.name}} | {{x.title}} - {{x.description}} - {{x.createdAt | date: 'medium'}}
+        
+      </label>
+    </div>
+
+</div>
+<h3>List of other Users (Click to view profile)</h3>
+<div *ngFor="let user of users">
+    <button [routerLink]="['/user/user._id']">{{user.name}}</button>
+</div>

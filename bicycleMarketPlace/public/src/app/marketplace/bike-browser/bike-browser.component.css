@@ -1,0 +1,28 @@
+:host {
+    width: 80%;
+    margin: 0% 10%;
+    height: 500px;
+    overflow: scroll;
+    display: block;
+    border: 1px solid black;
+}
+
+img {
+    width: 200px;
+    display: inline-block;
+}
+
+#price {
+    display: inline-block;
+    text-align: right;
+}
+
+#desc {
+    display: inline-block;
+    width: 400px;
+}
+
+.bikewrapper {
+    border: 1px solid black;
+    width: 1000px;
+}

@@ -1,0 +1,7 @@
+<div class="navBar">
+    <a [routerLink]="['marketplace/browse']">Browse</a>
+    <a *ngIf='loginState' href="/marketplace/listings">My Listings</a>
+    <a *ngIf='!loginState' href="/">Log in</a>
+    <a *ngIf='loginState' href="/logout">Log off</a>
+</div>
+<router-outlet></router-outlet>

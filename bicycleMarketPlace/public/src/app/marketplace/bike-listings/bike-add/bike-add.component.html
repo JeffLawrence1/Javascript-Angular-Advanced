@@ -1,0 +1,16 @@
+<div id='bike'>
+    <img src="{{bikeInstance.image}}">
+    <form (submit)="onSubmit()" #formObject='ngForm'>
+        <label for="title">Title<span *ngIf='title?.valid !== true'>{{title?.errors | json}}</span></label>
+        <input type="text" name="title" required minlength="4" maxlength="64" [(ngModel)]="bikeInstance.title" #title='ngModel' />
+        <label for="description">Description<span *ngIf='description?.valid !== true'>{{description?.errors | json}}</span></label>
+        <input type="text" name="description" required minlength="8" maxlength="255" [(ngModel)]="bikeInstance.description" #description='ngModel' />
+        <label for="location">Location<span *ngIf='location?.valid !== true'>{{location?.errors | json}}</span></label>
+        <input type="text" name="location" required minlength="5" maxlength="100" [(ngModel)]="bikeInstance.location" #location='ngModel' />
+        <label for="price">Price<span *ngIf='price?.valid !== true'>{{price?.errors | json}}</span></label>
+        <input type="number" name="price" required minlength="1" maxlength="10000" [(ngModel)]="bikeInstance.price" #price='ngModel' />
+        <label for="image">Image<span *ngIf='image?.valid !== true'>{{image?.errors | json}}</span></label>
+        <input type="text" name="image" required minlength="1" maxlength="100" [(ngModel)]="bikeInstance.image" #image='ngModel' />
+        <input type="submit" [disabled]="formObject.invalid">
+    </form>
+</div>

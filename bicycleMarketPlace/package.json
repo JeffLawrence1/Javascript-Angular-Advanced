@@ -1,0 +1,31 @@
+{
+  "name": "bikemarket",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular2-materialize": "^15.1.10",
+    "bcrypt": "^1.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "hammerjs": "^2.0.8",
+    "jquery": "^2.2.4",
+    "materialize-css": "^0.100.2",
+    "mongoose": "^4.13.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
